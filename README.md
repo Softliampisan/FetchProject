@@ -2,7 +2,11 @@
 
 ### Summary: Include screen shots or a video of your app highlighting its features
 My app is a SwiftUI-based recipe viewer built using the MVVM architecture. It fetches a list of recipes from an API and displays detailed recipe info such as name, cuisine, image, and links to source and YouTube tutorials. The UI is responsive and includes pull-to-refresh functionality. The separation of concerns provided by MVVM made the codebase easier to manage, test, and scale.
-<img src="https://github.com/user-attachments/assets/64bd8545-4c62-46d3-b01a-25d5b74eae4d" alt="Simulator Screenshot - iPhone 15 Pro - 2025-04-14 at 17:10:43" width="300"/>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/64bd8545-4c62-46d3-b01a-25d5b74eae4d" alt="Simulator Screenshot - iPhone 15 Pro - 2025-04-14 at 17:10:43" width="300"/>
+</p>
+[Screen Recording 2568-04-14 at 21.31.51.zip](https://github.com/user-attachments/files/19746480/Screen.Recording.2568-04-14.at.21.31.51.zip)
 
 ### Focus Areas: What specific areas of the project did you prioritize? Why did you choose to focus on these areas?
 I prioritized image caching, performance optimization, and concurrency. Since the app heavily relies on remote image loading, I implemented a custom ImageCache class that downloads, hashes, and stores images locally using a filesystem-safe SHA256 hash of the image URL. This reduces repeated downloads, speeds up scrolling performance, and ensures the cache is persistent between sessions. I also used Swift’s async/await to simplify asynchronous image loading.
