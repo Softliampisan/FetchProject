@@ -26,6 +26,6 @@ I spent approximately 7-10 hours on the project, broken down as follows:
 The current design lacks a cache expiration policy, which means cached images will persist indefinitely unless manually cleared. In a real-world scenario, I would want to implement time-based invalidation or storage size limits. Additionally, I could improve the user experience with image placeholders or loading indicators while images are being fetched.
 
 ### Additional Information: Is there anything else we should know? Feel free to share any insights or constraints you encountered.
-- My laptop crashed and both Finder and Xcode became unresponsive for half a day. I spent most of the day troubleshooting and fixing the issue before I could finalize and submit the project.
 - The ImageCache class creates a dedicated directory inside the system caches folder. All images are saved with a SHA256-based filename to avoid conflicts and support long URLs.
 - The cache is cleared manually via clearCache(), which could be hooked into app settings or memory warnings.
+- Due to an unexpected system issue, my laptop crashed, and both Finder and Xcode became unresponsive for several hours. I dedicated a significant portion of the day to troubleshooting and resolving the issue, which delayed my ability to finalize and submit the project.
