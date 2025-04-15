@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CryptoKit
 
 class ImageCache {
     let cacheDirectory: URL
@@ -22,7 +23,8 @@ class ImageCache {
     }
 
     func getImage(for url: URL) async -> UIImage? {
-        let filePath = cacheDirectory.appendingPathComponent(url.lastPathComponent)
+        let filename = hashedFileName(for: url)
+        let filePath = cacheDirectory.appendingPathComponent(filename)
 
         if fileManager.fileExists(atPath: filePath.path) {
             return UIImage(contentsOfFile: filePath.path)
@@ -39,5 +41,15 @@ class ImageCache {
         }
 
         return nil
+    }
+
+    func hashedFileName(for url: URL) -> String {
+        let hashed = SHA256.hash(data: Data(url.absoluteString.utf8))
+        return hashed.compactMap { String(format: "%02x", $0) }.joined()
+    }
+
+    func clearCache() {
+        try? fileManager.removeItem(at: cacheDirectory)
+        try? fileManager.createDirectory(at: cacheDirectory, withIntermediateDirectories: true, attributes: nil)
     }
 }

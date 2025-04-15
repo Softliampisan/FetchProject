@@ -1,5 +1,5 @@
 //
-//  RecipeListViewModel.swift
+//  RecipeListViewModelTests.swift
 //  FetchProjectTests
 //
 //  Created by Soft Liampisan on 10/4/2568 BE.
@@ -22,21 +22,21 @@ final class RecipeListViewModelTests: XCTestCase {
         super.tearDown()
     }
 
-    // Test for successful recipe fetch
+    //Test for successful recipe
     func testFetchRecipesSuccess() async throws {
         let testURL = "https://d3jbb8n5wk0qxi.cloudfront.net/recipes.json"
         let recipes = try await viewModel.fetchRecipes(from: testURL)
         XCTAssertFalse(recipes.isEmpty, "Expected non-empty recipe list")
     }
 
-    // Test for empty recipe fetch
+    //Test for empty recipe
     func testFetchEmptyRecipes() async throws {
         let testURL = "https://d3jbb8n5wk0qxi.cloudfront.net/recipes-empty.json"
         let recipes = try await viewModel.fetchRecipes(from: testURL)
         XCTAssertTrue(recipes.isEmpty, "Expected empty recipe list")
     }
 
-    // Test for malformed recipe data
+    //Test for malformed recipe data
     func testFetchMalformedRecipes() async {
         let testURL = "https://d3jbb8n5wk0qxi.cloudfront.net/recipes-malformed.json"
         do {
