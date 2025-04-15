@@ -1,4 +1,4 @@
-# FetchProject
+# Fetch iOS Project
 
 ### Summary: Include screen shots or a video of your app highlighting its features
 My app is a SwiftUI-based recipe viewer built using the MVVM architecture. It fetches a list of recipes from an API and displays detailed recipe info such as name, cuisine, image, and links to source and YouTube tutorials. The UI is responsive and includes pull-to-refresh functionality. The separation of logic provided by MVVM makes the codebase easier to manage, test, and scale.
