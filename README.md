@@ -12,10 +12,10 @@ My app is a SwiftUI-based recipe viewer built using the MVVM architecture. It fe
 I prioritized image caching, performance optimization, and concurrency. Since the app heavily relies on remote image loading, I implemented a custom ImageCache class that downloads, hashes, and stores images locally using a filesystem-safe SHA256 hash of the image URL. This reduces repeated downloads, speeds up scrolling performance, and ensures the cache is persistent between sessions. I also used Swift’s async/await to simplify asynchronous image loading.
 
 ### Time Spent: Approximately how long did you spend working on this project? How did you allocate your time?
-I spent approximately 7-10 hours on the project, broken down as follows:
+I spent approximately 8-10 hours on the project, broken down as follows:
 - 2 hours for building the base UI and recipe model
 - 3 hours implementing and testing the image cache
-- 2–3 hours writing unit tests, documenting, and debugging
+- 3–5 hours writing unit tests, documenting, and debugging
 
 ### Trade-offs and Decisions: Did you make any significant trade-offs in your approach?
 - I chose to use a hashed file name instead of the URL's last path component to avoid file system issues and guarantee uniqueness—even when images have identical names or query parameters.
